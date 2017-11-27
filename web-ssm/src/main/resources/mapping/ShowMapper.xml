@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ssm.dao.ShowDao">
+	<resultMap id="show1" type="Show">
+		<id column="sname" property="sname"/>
+		<result column="sc" property="count"/>
+	</resultMap>
+	<select id="findAllShow" resultMap="show1">
+		select sname,count(*) sc from t_song inner JOIN
+		t_singer on t_song.singerid=t_singer.singerid GROUP BY sname
+	</select>
+</mapper>

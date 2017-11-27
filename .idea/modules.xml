@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/module_app/module_app.iml" filepath="$PROJECT_DIR$/module_app/module_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_maven/module_maven.iml" filepath="$PROJECT_DIR$/module_maven/module_maven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_springdata/module_springdata.iml" filepath="$PROJECT_DIR$/module_springdata/module_springdata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_web/module_web.iml" filepath="$PROJECT_DIR$/module_web/module_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_web_test/module_web_test.iml" filepath="$PROJECT_DIR$/module_web_test/module_web_test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mvdemo/mvdemo.iml" filepath="$PROJECT_DIR$/mvdemo/mvdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shirodemo1/shirodemo1.iml" filepath="$PROJECT_DIR$/shirodemo1/shirodemo1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm_shiro/ssm_shiro.iml" filepath="$PROJECT_DIR$/ssm_shiro/ssm_shiro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-ssm/web-ssm.iml" filepath="$PROJECT_DIR$/web-ssm/web-ssm.iml" />
+    </modules>
+  </component>
+</project>

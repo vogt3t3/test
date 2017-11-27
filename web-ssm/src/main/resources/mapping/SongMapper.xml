@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ssm.dao.SongDao">
+	<sql id="base">
+		songid,songname,urlpath,singerid
+	</sql>
+	<insert id="addSong" parameterType="Song" useGeneratedKeys="true" keyProperty="songid">
+		insert into t_song
+		VALUES (#{songid},#{songname},#{urlpath},#{singerid})
+	</insert>
+	<update id="updateSong" parameterType="Song">
+		update t_song set songname=#{songname},
+		urlpath=#{urlpath},singerid=#{singerid}
+		where songid=#{songid}
+	</update>
+	<delete id="deleteSong" parameterType="int">
+		delete from t_song where songid=#{songid}
+	</delete>
+	<select id="findSong" parameterType="Song" resultType="Song">
+		select <include refid="base"/>
+		from t_song where songname like '%${songname}%'
+	</select>
+	<select id="findAllSong" parameterType="int" resultType="Song">
+		SELECT <include refid="base"/>
+		from t_song where singerid=#{singerid}
+	</select>
+	<select id="findSongById" parameterType="int" resultType="Song">
+		select <include refid="base"/>
+		from t_song
+		where songid=#{songid}
+	</select>
+</mapper>

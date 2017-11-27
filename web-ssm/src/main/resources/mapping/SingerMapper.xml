@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ssm.dao.SingerDao">
+	<sql id="base">
+		singerid,sname,birthday,region
+	</sql>
+	<select id="findAllSinger" resultType="Singer">
+		select
+		<include refid="base" />
+		from t_singer
+	</select>
+	<insert id="addSinger" parameterType="Singer" useGeneratedKeys="true" keyProperty="singerid">
+		insert into t_singer
+		values (#{singerid},#{sname},#{birthday},#{region})
+	</insert>
+	<update id="updateSinger" parameterType="Singer">
+		update t_singer
+		set sname=#{sname},birthday=#{birthday},region=#{region}
+		where singerid=#{singerid}
+	</update>
+	<delete id="deleteSinger" parameterType="int">
+		delete from t_singer
+		where singerid=#{singerid}
+	</delete>
+	<select id="findSingerById" parameterType="int" resultType="Singer">
+		select <include refid="base"/>
+		from t_singer
+		where singerid=#{singerid}
+	</select>
+	<select id="findSinger" parameterType="string" resultType="Singer">
+		select <include refid="base"/>
+		from t_singer
+		where region=#{region}
+	</select>
+	<select id="findAllSong" resultType="Song" parameterType="int">
+		select * FROM t_song
+		where singerid=#{singerid}
+	</select>
+</mapper>
